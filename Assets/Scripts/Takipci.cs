@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Takipci : MonoBehaviour
@@ -23,9 +22,6 @@ public class Takipci : MonoBehaviour
     private Player player_2;
     private AudioSource audio;
 
-
-   
-
     private void Start()
     {
 
@@ -43,23 +39,18 @@ public class Takipci : MonoBehaviour
             duraklar[i] = yol.GetChild(i).position;
             duraklar[i] = new Vector3(duraklar[i].x, transform.position.y, duraklar[i].z);
         }
-
         StartCoroutine(YolTakip(duraklar));
-
-
     }
+
     private void Update()
     {
-       if(KarakterYakalandıMı())
+       if(KarakterYakalandiMi())
         {
             light.color = Color.red;
             Siren();
             player_2.Dead();
            
         }
-      
-      
-
     }
 
     private void Siren()
@@ -68,7 +59,7 @@ public class Takipci : MonoBehaviour
     }
     
 
-    bool KarakterYakalandıMı()
+    bool KarakterYakalandiMi()
     {
         RaycastHit hit;
         bool detect = false;
@@ -94,9 +85,6 @@ public class Takipci : MonoBehaviour
 
         return detect;
     }
-
-
-
 
     IEnumerator KarakterDonus(Vector3 hedef)
     {
@@ -146,21 +134,9 @@ public class Takipci : MonoBehaviour
                         hedef = duraklar[j];
                         yield return new WaitForSeconds(0.5f);
                         yield return StartCoroutine(KarakterDonus(hedef));
-
                     }
-
                     yield return null;
-
                 }
-
-
             }
-
-        
-
     }
-
-
-
-    
 }

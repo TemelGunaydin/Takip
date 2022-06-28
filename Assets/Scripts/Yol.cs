@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Yol : MonoBehaviour
 {
@@ -18,9 +16,5 @@ public class Yol : MonoBehaviour
         }
 
         Gizmos.DrawLine(startPos.position, yol.GetChild(0).position);
-
     }
-
-
-
 }

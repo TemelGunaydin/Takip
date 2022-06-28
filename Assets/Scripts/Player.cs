@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
@@ -21,10 +19,6 @@ public class Player : MonoBehaviour
     private Vector3 moveAmount;
     private AudioSource motorSesi;
     private float input;
-
-
-
-
 
     private void Start()
     {
